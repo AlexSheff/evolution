@@ -1,8 +1,10 @@
-# The Evolution Chain: Big Bang to Post-Biological Intelligence
+# Everything has Evolution: Big Bang to Post-Biological Intelligence
 
-An interactive causal timeline spanning **13.8 billion years** — from cosmic origins and stellar nucleosynthesis to biological complexity, cognitive abstraction, universal computation, the Hybrid Mind, and post-biological intelligence.
+🌐 **Live Website:** [https://alexsheff.github.io/evolution/](https://alexsheff.github.io/evolution/)
 
-Each stage represents a new way of storing, copying, and processing information built upon the stage before it, highlighting **what each milestone enabled next**.
+An interactive visual and causal timeline spanning **13.8 billion years** across **12 eras** and **4 information substrates** — from cosmic origins and stellar nucleosynthesis to biological complexity, cognitive abstraction, universal computation, the Hybrid Mind, and post-biological intelligence.
+
+Each stage represents a new way of storing, copying, and processing information built upon the stage before it, accompanied by an **animated process schematic** (`Initial State ⟶ Evolutionary Process ⟶ Emergent Capability`) and highlighting **what each milestone enabled next**.
 
 ---
 
@@ -30,42 +32,11 @@ Each stage represents a new way of storing, copying, and processing information 
 
 ---
 
-## Features
+## Structure & Navigation
 
-- **Causal "Enabled" Structure**: Every historical milestone explicitly states the next capability or evolutionary layer it unlocked.
-- **Interactive Era Navigation**: Color-coded 12-era visual strip and sticky scroll-progress indicator that tracks the active era and time span.
-- **Instant Search & Filtering**: Filter events in real time across dates, concepts, and causal outcomes, or toggle scientifically disputed dates (`disputed`).
-- **Light & Dark Theme**: Automatic system color scheme detection with manual theme toggle.
+- **Causal "Enabled" Chain**: Every milestone states the next capability or evolutionary layer it unlocked.
+- **Interactive Era Strip**: Color-coded 12-era visual navigation and scroll indicator tracking the active era and time span.
+- **Search & Disputed Filter**: Instant search across dates, concepts, and causal outcomes, plus a toggle to hide or show scientifically disputed dates (`disputed`).
+- **Light & Dark Theme**: Automatic system color scheme detection with a manual theme switch.
 
----
-
-## Running Locally
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the development server (runs on `http://0.0.0.0:3000`):
-   ```bash
-   npm run dev
-   ```
-
----
-
-## Deploying to GitHub Pages
-
-This project is pre-configured for **GitHub Pages** (`index.html` at the root, `.nojekyll`, and an automated GitHub Actions workflow in `.github/workflows/deploy-pages.yml`).
-
-### Option 1: Automatic Deploy via GitHub Actions (Recommended)
-1. Push or sync these changes to your GitHub repository (`AlexSheff/evolution`).
-2. Open your repository on GitHub and go to **Settings → Pages**.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. The workflow (`Deploy static content to Pages`) will automatically publish `index.html` to:
-   `https://alexsheff.github.io/evolution/`
-
-### Option 2: Direct Deploy from Branch
-1. In your GitHub repository, go to **Settings → Pages**.
-2. Under **Build and deployment → Source**, select **Deploy from a branch**.
-3. Choose the **`main`** branch and folder **`/ (root)`**, then click **Save**.
-4. Within 1–2 minutes your site will be live at `https://alexsheff.github.io/evolution/`.
 
