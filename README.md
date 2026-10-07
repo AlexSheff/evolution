@@ -1,4 +1,4 @@
-# Everything has Evolution: Big Bang to Post-Biological Intelligence
+# Everything Evolves: Big Bang to Post-Biological Intelligence
 
 🌐 **Live Website:** [https://alexsheff.github.io/evolution/](https://alexsheff.github.io/evolution/)
 

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Everything has Evolution — Big Bang to Post-Biological Intelligence</title>
+<title>Everything Evolves — Big Bang to Post-Biological Intelligence</title>
 <meta name="description" content="A visual and causal timeline of 13.8 billion years: cosmos, elements, galaxies, Earth, life, mind, language, geometry, logic, computation, AI, the Hybrid Mind and beyond.">
-<meta property="og:title" content="Everything has Evolution — Big Bang to Post-Biological Intelligence">
+<meta property="og:title" content="Everything Evolves — Big Bang to Post-Biological Intelligence">
 <meta property="og:description" content="A visual and causal timeline of 13.8 billion years: cosmos, elements, galaxies, Earth, life, mind, language, geometry, logic, computation, AI, the Hybrid Mind and beyond.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%2778%27 font-size=%2780%27>🌌</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -711,7 +711,7 @@ footer {
 
 <!-- 3-Zone Sticky Top Bar -->
 <div class="bar" id="bar">
-  <a href="#" class="brand" id="cur">Everything has Evolution</a>
+  <a href="#" class="brand" id="cur">Everything Evolves</a>
   <nav class="top-nav" aria-label="Primary sections">
     <a href="#e0">Cosmos &amp; Earth</a>
     <a href="#e5">Life &amp; Complexity</a>
@@ -729,7 +729,7 @@ footer {
 
 <header>
   <p class="kicker">13.8 BILLION YEARS · 12 CAUSAL ERAS · 4 INFORMATION SUBSTRATES</p>
-  <h1>Everything has Evolution.</h1>
+  <h1>Everything Evolves.</h1>
   <div class="hero-grid">
     <div class="hero-lead">
       <p>A logical and visual timeline from the Big Bang to post-biological intelligence. Every stage is a new substrate for storing, copying, and transforming information—built directly on the capabilities unlocked by the stage before it.</p>
@@ -1683,7 +1683,7 @@ const io = new IntersectionObserver(es => {
   es.forEach(en => {
     if (en.isIntersecting) {
       const s = en.target;
-      $("cur").textContent = "Everything has Evolution · " + s.dataset.n;
+      $("cur").textContent = "Everything Evolves · " + s.dataset.n;
       $("rng").textContent = s.dataset.s;
       $("bar").style.setProperty("--c", s.style.getPropertyValue("--c"));
     }
@@ -1695,7 +1695,7 @@ document.querySelectorAll(".era").forEach(s => io.observe(s));
 addEventListener("scroll", () => {
   const h = document.documentElement;
   if (h.scrollTop < 120) {
-    $("cur").textContent = "Everything has Evolution";
+    $("cur").textContent = "Everything Evolves";
   }
   $("prog").style.width = (100 * h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)) + "%";
 }, { passive: true });
