@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Evolution Chain: Big Bang to Post-Biological Intelligence</title>
+<meta name="description" content="A causal timeline of 13.8 billion years: cosmos, elements, galaxies, Earth, life, mind, language, technology, AI and beyond.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%2778%27 font-size=%2780%27>🌌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f4;--ink:#15202e;--mute:#556274;--line:#c9d1da;--card:#f8fafb;--head:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1620;--ink:#e6ebf1;--mute:#93a1b3;--line:#2a3646;--card:#152030}}
+:root[data-theme="dark"]{--bg:#0f1620;--ink:#e6ebf1;--mute:#93a1b3;--line:#2a3646;--card:#152030}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:1rem;padding:.55rem 1rem;font-family:var(--head)}
+.bar b{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.bar span{color:var(--mute);font-size:.9rem;white-space:nowrap}
+.prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--c,var(--ink))}
+button,.chip{font:600 .9rem var(--head);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.35rem .7rem;cursor:pointer}
+button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+header{max-width:62rem;margin:0 auto;padding:4rem 1.2rem 2rem}
+h1{font:800 clamp(2.4rem,7vw,5rem)/1 var(--head);letter-spacing:-.03em;margin:0 0 1.2rem;max-width:14ch}
+header p{max-width:42rem;color:var(--mute);margin:.4rem 0}
+.strip{display:grid;grid-template-columns:repeat(12,1fr);height:3.2rem;margin:2rem 0 .6rem;border-radius:4px;overflow:hidden}
+.strip a{background:var(--c);opacity:.9;position:relative}
+.strip a:hover,.strip a:focus-visible{opacity:1;transform:scaleY(1.15)}
+.key{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.3rem .8rem;font:500 .9rem var(--head);padding:0;list-style:none;margin:1rem 0}
+.key a{text-decoration:none;display:flex;gap:.5rem;align-items:baseline}
+.key i{width:.7rem;height:.7rem;background:var(--c);border-radius:50%;flex:none}
+.tools{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
+.tools input{font:inherit;padding:.35rem .7rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);min-width:14rem}
+main{max-width:62rem;margin:0 auto;padding:0 1.2rem 4rem}
+section.era{border-left:6px solid var(--c);padding:1.6rem 0 1rem 1.4rem;margin-top:2.4rem}
+.era h2{font:800 clamp(1.6rem,4vw,2.4rem)/1.1 var(--head);margin:0;letter-spacing:-.02em}
+.span{font:500 .95rem var(--head);color:var(--mute);margin:.2rem 0 .6rem}
+.lead{margin:0 0 1rem;max-width:40rem}
+.row{display:grid;grid-template-columns:9.5rem 1fr;gap:.2rem 1.2rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.when{font:700 1rem var(--head);font-variant-numeric:tabular-nums;color:var(--ink)}
+.when::before{content:"";display:inline-block;width:.6rem;height:.6rem;background:var(--c);border-radius:50%;margin-right:.45rem}
+.pt{margin:0;font-weight:600}
+.en{margin:.15rem 0 0;color:var(--mute);font-size:.95rem}
+.dis{font:600 .75rem var(--head);border:1px solid var(--mute);border-radius:4px;padding:0 .35rem;margin-left:.4rem;color:var(--mute);vertical-align:middle}
+.hide-dis .row.d{display:none}
+.row.miss{display:none}
+.note{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:1rem 1.2rem;margin-top:2.4rem}
+.note h2{font:700 1.2rem var(--head);margin:0 0 .5rem}
+.note li{margin:.3rem 0}
+footer{max-width:62rem;margin:0 auto;padding:1rem 1.2rem 3rem;color:var(--mute);font-size:.9rem}
+@media (max-width:600px){.row{grid-template-columns:1fr}.bar span{display:none}.strip{height:2.2rem}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"><b id="cur">The Evolution Chain</b><span id="rng">13.8 Gya to now</span><button id="th" aria-label="Toggle color theme">Theme</button><div class="prog" id="prog"></div></div>
+<header>
+<h1>Everything has a history.</h1>
+<p>A causal timeline from the Big Bang to post-biological intelligence. Each stage is a new way of storing, copying and processing information, built on top of the previous one. Every entry says what it made possible next.</p>
+<p>Dates are approximate. Entries marked <span class="dis">disputed</span> are under active scientific debate. Part XII is projection, not history.</p>
+<nav aria-label="Eras"><div class="strip" id="strip"></div><ul class="key" id="key"></ul></nav>
+<div class="tools"><input id="q" type="search" placeholder="Search: photosynthesis, writing, Transformer" aria-label="Search entries"><button id="hd" aria-pressed="false">Hide disputed dates</button></div>
+</header>
+<main id="main"></main>
+<footer>Ages: Gya = billion years ago, Mya = million, kya = thousand. Source repository: replace this line with your GitHub link. License: your choice (CC BY 4.0 suggested).</footer>
+<script>
+const E=[
+{n:"Cosmos",s:"13.8 Gya to ~100 Myr",c:"#b91c1c",l:"Space, time and the first matter.",r:[
+["13.8 Gya","Big Bang: hot, dense expansion of spacetime","Everything"],
+["~10⁻³⁶ s","Cosmic inflation (?)","Large-scale uniformity and the seeds of structure"],
+["~1 μs","Quarks bind into protons and neutrons","Baryonic matter"],
+["3–20 min","Primordial nucleosynthesis: ~75% H, ~25% He by mass, traces of Li","The first nuclei"],
+["~380,000 yr","Recombination: neutral atoms form, the CMB is released","A transparent universe; gas can cool and collapse"],
+["~0.4–100 Myr","Dark Ages: gravity grows density fluctuations, dark matter halos form","Sites for the first stars"]]},
+{n:"Stars and elements",s:"~100 Myr onward",c:"#c2620c",l:"Stars are the factories that build the periodic table.",r:[
+["~100–200 Myr","First stars (Population III); cosmic dawn, reionization completes by ~1 Gyr","First heavy elements and first starlight"],
+["Ongoing","Stellar fusion builds C, N, O, Ne, Si up to Fe","The chemistry of rock and life"],
+["Ongoing","Supernovae and stellar winds scatter the products","Enriched gas for the next generation"],
+["Ongoing","Neutron-star mergers (r-process) and other sources make gold, uranium and other heavy elements","The full periodic table"]]},
+{n:"Galaxies",s:"~0.3 Gyr onward",c:"#8b5cf6",l:"Gravity gathers stars, gas and dark matter into islands.",r:[
+["~0.3–1 Gyr","Protogalaxies form in dark matter halos; first supermassive black holes","Galactic structure"],
+["~10 Gya","Peak cosmic star formation (cosmic noon)","Most of the universe's stars"],
+["~13 Gya","Milky Way's oldest stars and halo; thick disk follows","Our galaxy's skeleton"],
+["~10–8 Gya","Gaia-Enceladus merger reshapes the young Milky Way","Thick disk and inner halo"],
+["~8 Gya to now","Thin disk, spiral arms, continued accretion of dwarf galaxies","A metal-rich environment for planets"]]},
+{n:"Solar System",s:"4.57 Gya",c:"#2563eb",l:"A long-lived star and a set of rocky and gas worlds.",r:[
+["~4.57 Gya","Molecular cloud fragment collapses; Sun and disk form","A stable star with billions of years of lifetime"],
+["~4.57–4.5 Gya","Planetesimals accrete into planets; giant planets migrate","The architecture we see today"],
+["~4.5 Gya","Giant impact (Theia) forms the Moon","Stabilized axial tilt and tides"],
+["~4.1–3.8 Gya","Late heavy bombardment (?): a spike or just a tail","Possible delivery of volatiles; crust disruption"]]},
+{n:"Earth",s:"4.54 Gya to now",c:"#0f766e",l:"A planet with water, a magnetic field and plate tectonics.",r:[
+["~4.54 Gya","Earth accretes and differentiates into core, mantle and crust","Magnetic field and mantle convection"],
+["~4.4 Gya","Oldest zircons imply liquid water and crust","Oceans"],
+["~4.0–2.5 Gya","Archean: oceans, hydrothermal vents, early continents","Chemical laboratories"],
+["~3.0–2.4 Gya","Oxygenic photosynthesis by cyanobacteria spreads","An oxygen source"],
+["~2.4 Gya","Great Oxidation Event","Ozone shield and aerobic metabolism"],
+["~720–635 Mya","Snowball Earth glaciations (?)","Possible selection pressure toward complexity"],
+["~540 Mya to now","Phanerozoic: five major mass extinctions reset ecosystems","Repeated adaptive radiations"]]},
+{n:"Chemistry to life",s:">4.0 Gya to ~3.5 Gya",c:"#16a34a",l:"Chemistry starts to copy itself, and selection begins.",r:[
+[">4.0 Gya","Prebiotic chemistry: amino acids, nucleotides, lipids, mineral catalysis","Building blocks"],
+["~4.1–3.5 Gya","Abiogenesis (?): self-replicating chemistry; RNA-world-type hypotheses","Heredity and selection: Darwinian evolution begins"],
+["~4.2–3.5 Gya","LUCA: genetic code, ribosomes, ATP metabolism, membranes","The common ancestor of Bacteria and Archaea"],
+["≥3.5 Gya","Earliest fairly secure fossils (stromatolites, microfossils)","A geological record of life"]]},
+{n:"Biological complexity",s:"~2.7 Gya to ~55 Mya",c:"#4d7c0f",l:"Formerly independent units merge into larger individuals (Maynard Smith and Szathmáry).",r:[
+["~2.7–1.8 Gya","Eukaryotes via endosymbiosis (mitochondria, later chloroplasts)","Energy budget for large genomes and cells"],
+["~1.2 Gya","Sexual reproduction","Faster recombination"],
+["~800–600 Mya","Multicellularity, with several independent origins","Tissue specialization"],
+["~600–540 Mya","Ediacaran biota; first nervous systems (?)","Signaling at organism scale"],
+["~539 Mya","Cambrian explosion: bilaterians, eyes, predation, hard parts","Arms races and sensory-motor loops"],
+["~470 Mya","Plants colonize land","Terrestrial ecosystems"],
+["~375 Mya","Tetrapods move onto land","Vertebrate life on land"],
+["~320 Mya","Amniotes: eggs independent of water","Full independence from water"],
+["~252 Mya","Permian extinction, the worst ever; reptiles and dinosaurs then dominate","An ecological reset"],
+["~66 Mya","Chicxulub impact and K-Pg extinction","Mammalian radiation"],
+["~65–55 Mya","Primates: grasping hands, forward-facing eyes","Visual and manual cognition"]]},
+{n:"Hominins and mind",s:"~7 Mya to ~100 kya",c:"#a16207",l:"Bipedal apes with tools, fire and growing brains.",r:[
+["~7–6 Mya","Human and chimpanzee lineages split; early bipedalism","Free hands"],
+["~3.3 Mya","Oldest known stone tools (Lomekwi)","Technology before genus Homo"],
+["~2.8–2.5 Mya","Genus Homo appears","Tool-making and growing brains"],
+["~1.8 Mya","Homo erectus: dispersal out of Africa, Acheulean tools","A global range"],
+["~1.0–0.4 Mya","Controlled fire and cooking (dates debated) (?)","More energy for brains; social hearths"],
+["~300 kya","Homo sapiens (Jebel Irhoud)","Our species"],
+["~200–100 kya","Neanderthals and Denisovans coexist and interbreed with sapiens","Gene flow between human groups"]]},
+{n:"Language and meaning",s:"~100 kya to ~1700",c:"#be185d",l:"Symbols, stories and writing let minds share and store what is not present.",r:[
+["≥100–50 kya","Full language with recursive syntax; origin date unresolved (?)","Reference to past, future and absent things; planning; shared fictions"],
+["~100 kya","Earliest symbolic behavior: ochre, beads (Blombos, Skhul)","Identity markers"],
+["~45–40 kya","Figurative cave art, figurines, instruments","Myth and ritual as shared meaning systems"],
+["~12 kya","Agriculture and settlement","Surplus, specialization, states"],
+["~5.2 kya","Writing (Sumer, Egypt)","Externalized memory, law, administration"],
+["~800–200 BCE","Axial Age: philosophy, universal ethics, early mathematics and logic","Abstract, critical thought"],
+["~1450","Printing press","Mass replication of knowledge"],
+["~1543–1687","Scientific Revolution: empiricism and mathematized physics","A method for correcting error"]]},
+{n:"Industry and computation",s:"~1760 to ~1990",c:"#475569",l:"Energy, machines and universal computation.",r:[
+["~1760–1900","Industrial Revolution: fossil energy, machines, telegraph","Energy and communication at scale"],
+["1936","Turing and Church formalize computation","A theory of universal machines"],
+["1947–1971","Transistor, integrated circuit, microprocessor","Cheap general computation"],
+["1969–1991","ARPANET, then the Web","A global information network"],
+["1958–1986","Perceptron, then backpropagation popularized","Learning by gradient descent"]]},
+{n:"Artificial intelligence",s:"1956 to now",c:"#0891b2",l:"Intelligence moves from genes to brains to culture to trained artifacts.",r:[
+["1956","The term AI coined at Dartmouth; the symbolic era","A research field"],
+["1997","Deep Blue defeats Kasparov (search-based)","Proof that narrow superhuman play is possible"],
+["2009–2012","GPUs plus large datasets; AlexNet wins ImageNet; deep learning takes over","Scalable representation learning"],
+["2016","AlphaGo defeats Lee Sedol (deep RL)","Learning without human game records"],
+["2017","Transformer architecture","Parallel training on sequences at scale"],
+["2018–2020","Pretraining paradigm: BERT, GPT-2/3; scaling laws","General-purpose language models"],
+["2022","ChatGPT brings chat-level LLMs to mass adoption; diffusion image models mature","AI as a general interface"],
+["2023–2026","Multimodal and reasoning models, tool use, agents, open-weight models, AI-assisted science and coding","Delegation of multi-step work"],
+["2026 (now)","Broadly capable systems, no consensus on AGI; autonomous agents and DAOs exist but are early","The question of coordination"]]},
+{n:"Beyond (projection)",s:"Speculation, not history",c:"#6d28d9",l:"Plausible extrapolations. None is a prediction.",r:[
+["Unknown (?)","AGI: systems matching or exceeding humans across most cognitive tasks. Timelines are contested.","Automated research and engineering"],
+["Decades (?)","Human-machine coupling: brain-computer interfaces, cognitive prosthetics, genetic interventions","Extended human capacities"],
+["Unknown (?)","Non-biological substrates for minds or agents, whether uploads or purely synthetic","Persistence beyond biology"],
+["Unknown (?)","Decentralized meta-systems: humans, AIs and agents coordinating through cryptographic protocols","Verifiable contribution accounting"],
+["Unknown (?)","Space expansion: off-world industry, self-replicating probes, engineered biospheres","Resilience beyond one planet"],
+["~1 Gyr","The Sun's brightening makes Earth uninhabitable; any long-term intelligence must leave","A hard deadline for staying"]]}
+];
+const R=["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"];
+const $=id=>document.getElementById(id);
+const main=$("main"),strip=$("strip"),key=$("key");
+E.forEach((e,i)=>{
+ const id="e"+i;
+ const a=document.createElement("a");a.href="#"+id;a.style.setProperty("--c",e.c);a.title=e.n;a.setAttribute("aria-label",e.n);strip.appendChild(a);
+ const li=document.createElement("li");li.innerHTML=`<a href="#${id}" style="--c:${e.c}"><i></i>${R[i]}. ${e.n}</a>`;key.appendChild(li);
+ const s=document.createElement("section");s.className="era";s.id=id;s.style.setProperty("--c",e.c);s.dataset.n=R[i]+". "+e.n;s.dataset.s=e.s;
+ s.innerHTML=`<h2>${R[i]}. ${e.n}</h2><p class="span">${e.s}</p><p class="lead">${e.l}</p>`+e.r.map(x=>{
+  const d=x[0].includes("(?)")||x[1].includes("(?)");
+  const t=(x[0]+" "+x[1]+" "+x[2]).toLowerCase();
+  return `<div class="row${d?" d":""}" data-t="${t.replace(/"/g,"")}"><div class="when">${x[0].replace(" (?)","")}</div><div><p class="pt">${x[1].replace(" (?)","")}${d?'<span class="dis">disputed</span>':""}</p><p class="en">Enabled: ${x[2]}</p></div></div>`}).join("");
+ main.appendChild(s);
+});
+main.insertAdjacentHTML("beforeend",`<div class="note"><h2>Corrections to common versions of this story</h2><ul>
+<li>LUCA is now often dated to ~4.2 Gya, earlier than the traditional 3.5 Gya.</li>
+<li>Genus Homo is ~2.8–2.5 Mya, not ~2 Mya.</li>
+<li>Theory of Mind cannot be dated to "100,000 years ago"; evidence exists in great apes, so its roots are far older than our species.</li>
+<li>The Cambrian began ~539 Mya; writing is ~5.2 kya.</li>
+<li>Language origin is unresolved; a single sudden "revolution" between 100 and 50 kya is contested.</li></ul></div>`);
+// search and filter
+$("q").addEventListener("input",e=>{const v=e.target.value.trim().toLowerCase();
+ document.querySelectorAll(".row").forEach(r=>r.classList.toggle("miss",v&&!r.dataset.t.includes(v)));
+ document.querySelectorAll(".era").forEach(s=>s.hidden=v&&!s.querySelector(".row:not(.miss)"));});
+$("hd").addEventListener("click",e=>{const on=e.target.getAttribute("aria-pressed")!=="true";e.target.setAttribute("aria-pressed",on);document.body.classList.toggle("hide-dis",on);});
+// theme
+$("th").addEventListener("click",()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";});
+// scroll gauge
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){const s=en.target;$("cur").textContent=s.dataset.n;$("rng").textContent=s.dataset.s;$("bar").style.setProperty("--c",s.style.getPropertyValue("--c"));}})},{rootMargin:"-30% 0px -60% 0px"});
+document.querySelectorAll(".era").forEach(s=>io.observe(s));
+addEventListener("scroll",()=>{const h=document.documentElement;$("prog").style.width=(100*h.scrollTop/(h.scrollHeight-h.clientHeight))+"%"},{passive:true});
+</script>
+</body>
+</html>
