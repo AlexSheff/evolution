@@ -1,0 +1,8 @@
+{
+  "name": "The Evolution Chain: Big Bang to Post-Biological Intelligence",
+  "description": "A causal timeline of 13.8 billion years: cosmos, elements, galaxies, Earth, life, mind, language, technology, AI and beyond.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
