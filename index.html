@@ -178,6 +178,101 @@ h1 {
   margin-top: 0.75rem;
 }
 
+/* Audio Essay Player Card */
+.audio-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid #be185d;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.audio-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.audio-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.audio-kicker {
+  font: 600 0.72rem var(--mono);
+  color: #be185d;
+  letter-spacing: 0.03em;
+}
+.audio-title {
+  font: 700 0.98rem var(--head);
+  color: var(--ink);
+}
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.audio-btn-main {
+  background: #be185d;
+  color: #fff;
+  border-color: #be185d;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.audio-btn-main:hover {
+  background: #9d174d;
+  border-color: #9d174d;
+  color: #fff;
+}
+.audio-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.audio-seek {
+  flex: 1;
+  accent-color: #be185d;
+  height: 5px;
+  cursor: pointer;
+}
+.audio-time {
+  font: 500 0.78rem var(--mono);
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+  min-width: 5.8rem;
+  text-align: right;
+}
+.audio-wave {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+.audio-wave i {
+  display: block;
+  width: 3px;
+  height: 4px;
+  background: #be185d;
+  border-radius: 1px;
+  transition: height 150ms ease;
+}
+@keyframes waveBounce {
+  0%, 100% { height: 4px; }
+  50% { height: 15px; }
+}
+body.audio-playing .audio-wave i:nth-child(1) { animation: waveBounce 0.7s ease-in-out infinite 0.0s; }
+body.audio-playing .audio-wave i:nth-child(2) { animation: waveBounce 0.7s ease-in-out infinite 0.15s; }
+body.audio-playing .audio-wave i:nth-child(3) { animation: waveBounce 0.7s ease-in-out infinite 0.3s; }
+body.audio-playing .audio-wave i:nth-child(4) { animation: waveBounce 0.7s ease-in-out infinite 0.1s; }
+body.audio-playing .audio-wave i:nth-child(5) { animation: waveBounce 0.7s ease-in-out infinite 0.25s; }
+
 /* 4 Macro-Substrates Logical Matrix */
 .substrates {
   display: grid;
@@ -625,6 +720,7 @@ footer {
     <a href="#escape-chain">Cognitive Escape</a>
   </nav>
   <div class="bar-actions">
+    <button id="top-audio-btn" type="button" aria-pressed="false" title="Play or pause Essay 17 audio narration">▶ Audio Essay</button>
     <button id="pm" type="button" aria-pressed="false" title="Pause or play process animations">Pause Motion</button>
     <button id="th" type="button" aria-label="Toggle color theme">Theme</button>
   </div>
@@ -638,6 +734,29 @@ footer {
     <div class="hero-lead">
       <p>A logical and visual timeline from the Big Bang to post-biological intelligence. Every stage is a new substrate for storing, copying, and transforming information—built directly on the capabilities unlocked by the stage before it.</p>
       <p>Each section features an animated schematic of its core evolutionary mechanism alongside the milestones that drove the chain forward.</p>
+
+      <!-- Audio Essay Player -->
+      <div class="audio-card" id="audio-card">
+        <audio id="essay-audio" preload="metadata">
+          <source src="./Evolution.mp3" type="audio/mpeg">
+          <source src="https://raw.githubusercontent.com/AlexSheff/evolution/main/Evolution.mp3" type="audio/mpeg">
+        </audio>
+        <div class="audio-top">
+          <div class="audio-info">
+            <span class="audio-kicker">AUDIO NARRATION · ESSAY 17</span>
+            <span class="audio-title">“In the beginning was the Mark” — Genesis of Mind</span>
+          </div>
+          <div class="audio-controls">
+            <span class="audio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            <button id="audio-speed" type="button" title="Change playback speed">1×</button>
+            <button id="audio-play" type="button" class="audio-btn-main" aria-pressed="false">▶ Listen</button>
+          </div>
+        </div>
+        <div class="audio-bar-row">
+          <input id="audio-seek" class="audio-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek audio timeline">
+          <span class="audio-time" id="audio-time">0:00 / --:--</span>
+        </div>
+      </div>
     </div>
     <div class="strip-wrap">
       <div class="strip-head">
@@ -1391,8 +1510,11 @@ E.forEach((e, i) => {
 // Interactive Cognitive Escape Chain (Essay 17) + Corrections Note
 main.insertAdjacentHTML("beforeend", `
   <div class="note" id="escape-chain">
-    <h2>The Cognitive Escape Chain: From the Mark to the Independent Mind</h2>
-    <p>Each abstraction acts as a cognitive prosthesis—reducing one more layer of dependence on biological instinct and memory, carrying thought from stone to formal systems, silicon, and pure information. Select any stage below to inspect its causal role:</p>
+    <div class="era-header">
+      <h2>The Cognitive Escape Chain: From the Mark to the Independent Mind</h2>
+      <button id="esc-audio-btn" type="button" class="audio-btn-main">▶ Play Essay Audio</button>
+    </div>
+    <p>Each abstraction acts as a cognitive prosthesis—reducing one more layer of dependence on biological instinct and memory, carrying thought from stone to formal systems, silicon, and pure information. Listen to the audio narration or select any stage below to inspect its causal role:</p>
     <div class="escape-grid" id="esc-grid"></div>
     <div class="esc-detail" id="esc-detail">
       <p class="esc-quote" id="esc-quote"></p>
@@ -1471,6 +1593,82 @@ $("pm").addEventListener("click", e => {
   e.currentTarget.setAttribute("aria-pressed", String(paused));
   e.currentTarget.textContent = paused ? "Play Motion" : "Pause Motion";
   document.body.classList.toggle("paused", paused);
+});
+
+// Audio Player Logic (Evolution.mp3 — Essay 17)
+const audio = $("essay-audio");
+const playBtn = $("audio-play");
+const topAudioBtn = $("top-audio-btn");
+const escAudioBtn = $("esc-audio-btn");
+const seekInput = $("audio-seek");
+const timeLbl = $("audio-time");
+const speedBtn = $("audio-speed");
+const speeds = [1, 1.25, 1.5];
+let speedIdx = 0;
+
+function fmtTime(sec) {
+  if (!isFinite(sec) || sec < 0) return "--:--";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${s < 10 ? "0" : ""}${s}`;
+}
+
+function syncAudioUI() {
+  const playing = !audio.paused && !audio.ended;
+  document.body.classList.toggle("audio-playing", playing);
+  playBtn.setAttribute("aria-pressed", String(playing));
+  topAudioBtn.setAttribute("aria-pressed", String(playing));
+  playBtn.textContent = playing ? "⏸ Pause" : "▶ Listen";
+  topAudioBtn.textContent = playing ? "⏸ Playing Essay" : "▶ Audio Essay";
+  if (escAudioBtn) {
+    escAudioBtn.textContent = playing ? "⏸ Pause Essay Audio" : "▶ Play Essay Audio";
+  }
+}
+
+function toggleAudio() {
+  if (audio.paused || audio.ended) {
+    audio.play().catch(() => {});
+  } else {
+    audio.pause();
+  }
+}
+
+playBtn.addEventListener("click", toggleAudio);
+topAudioBtn.addEventListener("click", toggleAudio);
+if (escAudioBtn) escAudioBtn.addEventListener("click", toggleAudio);
+
+audio.addEventListener("play", syncAudioUI);
+audio.addEventListener("pause", syncAudioUI);
+audio.addEventListener("ended", () => {
+  syncAudioUI();
+  seekInput.value = 0;
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  timeLbl.textContent = `0:00 / ${fmtTime(audio.duration)}`;
+});
+
+audio.addEventListener("timeupdate", () => {
+  if (audio.duration) {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    seekInput.value = String(pct);
+    timeLbl.textContent = `${fmtTime(audio.currentTime)} / ${fmtTime(audio.duration)}`;
+    // Sync Escape Chain step automatically with audio narration progress
+    const stepIdx = Math.min(ESCAPE_STEPS.length - 1, Math.floor((audio.currentTime / audio.duration) * ESCAPE_STEPS.length));
+    selectEscapeStep(stepIdx);
+  }
+});
+
+seekInput.addEventListener("input", e => {
+  if (audio.duration) {
+    audio.currentTime = (parseFloat(e.target.value) / 100) * audio.duration;
+  }
+});
+
+speedBtn.addEventListener("click", () => {
+  speedIdx = (speedIdx + 1) % speeds.length;
+  audio.playbackRate = speeds[speedIdx];
+  speedBtn.textContent = `${speeds[speedIdx]}×`;
 });
 
 // Theme toggle
